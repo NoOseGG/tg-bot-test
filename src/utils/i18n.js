@@ -5,7 +5,7 @@ import Backend from "i18next-http-backend";
 import translationEN from "../locales/en/translation.json";
 import translationRU from "../locales/ru/translation.json";
 
-i18n
+export const i18next = i18n
   .use(initReactI18next)
   .use(Backend)
   .init({
@@ -20,5 +20,3 @@ i18n
     debug: false,
     lng: "en",
   });
-
-export default i18n;
