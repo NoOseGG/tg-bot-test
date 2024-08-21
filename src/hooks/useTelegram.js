@@ -7,10 +7,10 @@ export function useTelegram() {
 
   const onMainButton = (isVisible) => {
     if (isVisible) {
-      tg.MainButton.show()
+      tg.MainButton.show();
       tg.MainButton.onClick(() => {
-        window.history.back()
-      })
+        window.history.back();
+      });
     } else {
       tg.MainButton.hide();
     }
@@ -19,6 +19,9 @@ export function useTelegram() {
   const onBackButton = (isVisible) => {
     if (isVisible) {
       tg.BackButton.show();
+      tg.BackButton.onClick(() => {
+        window.history.back();
+      });
     } else {
       tg.BackButton.hide();
     }

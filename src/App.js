@@ -10,7 +10,7 @@ import { useTelegram } from "./hooks/useTelegram";
 import AppRouter from "./router/AppRouter";
 
 function App() {
-  const { user, onMainButton } = useTelegram();
+  const { user } = useTelegram();
   const { i18n } = useTranslation();
   const [lan, setLan] = useState("");
 
@@ -21,7 +21,6 @@ function App() {
   console.log("user", user);
 
   useEffect(() => {
-    onMainButton(true);
     if (user?.language_code === "ru") {
       i18n.changeLanguage("ru");
     } else {

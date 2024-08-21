@@ -19,6 +19,7 @@
   font-weight: 700;
   margin-bottom: 10px;
   text-align: center;
+  color: var(--tg-theme-text-color);
 }
 
 .img {
