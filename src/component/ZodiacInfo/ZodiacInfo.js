@@ -12,7 +12,7 @@ const ZodiacInfo = () => {
   const { t } = useTranslation();
   const { zodiac } = useParams();
   const [info, setInfo] = useState("");
-
+  
   useEffect(() => {
     onBackButton(true);
     if (zodiac) {
@@ -25,13 +25,9 @@ const ZodiacInfo = () => {
       axios
         .post(URLS.api, data)
         .then((res) => {
-          console.log("data", res);
-          console.log(res?.data?.horoscope);
-
           setInfo(res?.data?.horoscope);
         })
         .catch((err) => {
-          console.log("error");
           setInfo("");
         });
     }
@@ -39,7 +35,8 @@ const ZodiacInfo = () => {
     return () => {
       onBackButton(true);
     };
-  }, [zodiac, onBackButton]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [zodiac]);
 
   return (
     <div className={styles.container}>

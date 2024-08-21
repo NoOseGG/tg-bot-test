@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { BrowserRouter } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
 import { i18next } from "./utils/i18n";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import "./App.css";
 
@@ -12,6 +12,11 @@ import AppRouter from "./router/AppRouter";
 function App() {
   const { user, onMainButton } = useTelegram();
   const { i18n } = useTranslation();
+  const [lan, setLan] = useState("");
+
+  useEffect(() => {
+    setLan(user?.language_code);
+  }, [user]);
 
   console.log("user", user);
 
@@ -26,7 +31,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div>{user?.language_code}</div>
+      <div>{lan}</div>
       <AppRouter />
     </BrowserRouter>
   );

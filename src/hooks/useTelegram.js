@@ -7,7 +7,10 @@ export function useTelegram() {
 
   const onMainButton = (isVisible) => {
     if (isVisible) {
-      tg.MainButton.show();
+      tg.MainButton.show()
+      tg.MainButton.onClick(() => {
+        window.history.back()
+      })
     } else {
       tg.MainButton.hide();
     }
