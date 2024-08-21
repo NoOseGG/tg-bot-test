@@ -13,9 +13,7 @@ const Header = () => {
     <div className="header">
       <Button onClick={onClose}></Button>
       <LanguageSwitch />
-      <span className=".username">
-        {user?.username && `Добро пожаловать ${user.username}`}
-      </span>
+      <span className=".username">{user?.username && `${user.username}`}</span>
     </div>
   );
 };
