@@ -9,7 +9,7 @@ const ZodiacsList = () => {
   return (
     <div className="zodiacs">
       {zodiacs.map((item, index) => (
-        <Item zodiac={item} />
+        <Item zodiac={item} key={index} />
       ))}
     </div>
   );

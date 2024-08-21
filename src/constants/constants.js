@@ -11,53 +11,55 @@ import scorpio from "../images/scorpio.svg";
 import taurus from "../images/taurus.svg";
 import virgo from "../images/virgo.svg";
 
+
+
 export const zodiacs = [
   {
-    name: "Aquarius",
+    name: "aquarius",
     img: aquarius,
   },
   {
-    name: "Aries",
+    name: "aries",
     img: aries,
   },
   {
-    name: "Cancer",
+    name: "cancer",
     img: cancer,
   },
   {
-    name: "Capricorn",
+    name: "capricorn",
     img: capricorn,
   },
   {
-    name: "Gemini",
+    name: "gemini",
     img: gemini,
   },
   {
-    name: "Leo",
+    name: "leo",
     img: leo,
   },
   {
-    name: "Libra",
+    name: "libra",
     img: libra,
   },
   {
-    name: "Pisces",
+    name: "pisces",
     img: pisces,
   },
   {
-    name: "Sagitarius",
+    name: "sagitarius",
     img: sagitarius,
   },
   {
-    name: "Scorpio",
+    name: "scorpio",
     img: scorpio,
   },
   {
-    name: "Taurus",
+    name: "taurus",
     img: taurus,
   },
   {
-    name: "Virgo",
+    name: "virgo",
     img: virgo,
   },
 ];

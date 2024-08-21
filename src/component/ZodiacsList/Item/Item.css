@@ -7,10 +7,11 @@
   border: 1px solid #000;
   padding: 5px 10px;
   transition: background-color 0.3s ease;
+  border-radius: 12px;
 }
 
 .zodiac-item:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .title {
@@ -21,6 +22,6 @@
 }
 
 .img {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
 }
