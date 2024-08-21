@@ -8,7 +8,7 @@ import { useTelegram } from "./hooks/useTelegram";
 import { useEffect } from "react";
 
 function App() {
-  const { user } = useTelegram();
+  const { user, onToggleBackButton } = useTelegram();
   const { i18n } = useTranslation();
 
   useEffect(() => {
@@ -22,6 +22,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <button onClick={onToggleBackButton}>ТОГЛ</button>
       <ZodiacsList />
     </div>
   );
