@@ -19,9 +19,6 @@ export function useTelegram() {
   const onBackButton = (isVisible) => {
     if (isVisible) {
       tg.BackButton.show();
-      tg.BackButton.onClick(() => {
-        window.history.back();
-      });
     } else {
       tg.BackButton.hide();
     }
