@@ -1,43 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import "./LanguageSwitch.module.css";
 import styles from "./LanguageSwitch.module.css";
 
-export const LanguageSwitch = () => {
-  const { t, i18n } = useTranslation();
+import Switch from "react-switch";
 
-  const handleChange = (event) => {
-    switch (event.target.value) {
-      case "en": {
-        i18n.changeLanguage("en");
-        break;
-      }
-      case "ru": {
-        i18n.changeLanguage("ru");
-        break;
-      }
-      default: {
-        i18n.changeLanguage("en");
-        break;
-      }
+export const LanguageSwitch = () => {
+  const { i18n } = useTranslation();
+  const [isChecked, setIsChecked] = useState(true);
+
+  const handleChange = () => {
+    setIsChecked(!isChecked);
+
+    if (isChecked) {
+      i18n.changeLanguage("ru");
+    } else {
+      i18n.changeLanguage("en");
     }
   };
 
   return (
     <div className={styles.container}>
-      <select
-        className={styles.select__language}
+      <Switch
         onChange={handleChange}
-        defaultValue={i18n.language}
-      >
-        <option className={styles.select__option} value="en">
-          {t("english")}
-        </option>
-        <option className={styles.select__option} value="ru">
-          {t("russian")}
-        </option>
-      </select>
+        checked={isChecked}
+        checkedIcon={false}
+        uncheckedIcon={false}
+      />
+      <span className={styles.text}>{isChecked ? "English" : "Русский"}</span>
     </div>
   );
 };

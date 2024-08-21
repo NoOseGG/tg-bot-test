@@ -13,6 +13,24 @@ const ZodiacInfo = () => {
   const { zodiac } = useParams();
   const [info, setInfo] = useState("");
 
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  function handleGesture() {
+    if (touchEndX < touchStartX) {
+      window.history.back();
+    }
+  }
+
+  document.addEventListener("touchstart", (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  document.addEventListener("touchend", (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleGesture();
+  });
+
   useEffect(() => {
     onBackButton(true);
     if (zodiac) {
@@ -34,6 +52,7 @@ const ZodiacInfo = () => {
 
     return () => {
       onBackButton(true);
+      document.removeEventListener();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [zodiac]);
