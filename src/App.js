@@ -26,7 +26,7 @@ function App() {
     } else {
       i18n.changeLanguage("en");
     }
-  }, [user, i18n, onMainButton]);
+  }, [user, i18n]);
 
   return (
     <BrowserRouter>
