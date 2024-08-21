@@ -11,8 +11,6 @@ import scorpio from "../images/scorpio.svg";
 import taurus from "../images/taurus.svg";
 import virgo from "../images/virgo.svg";
 
-
-
 export const zodiacs = [
   {
     name: "aquarius",
@@ -63,3 +61,7 @@ export const zodiacs = [
     img: virgo,
   },
 ];
+
+export const URLS = {
+  api: "https://poker247tech.ru/get_horoscope/",
+};

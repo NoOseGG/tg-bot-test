@@ -1,14 +1,16 @@
 import { useTranslation } from "react-i18next";
-import "./App.css";
-import Header from "./component/Header/Header";
-import ZodiacsList from "./component/ZodiacsList/ZodiacsList";
+import { BrowserRouter } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
 import { i18next } from "./utils/i18n";
-import { useTelegram } from "./hooks/useTelegram";
 import { useEffect } from "react";
 
+import "./App.css";
+
+import { useTelegram } from "./hooks/useTelegram";
+import AppRouter from "./router/AppRouter";
+
 function App() {
-  const { user, onToggleBackButton } = useTelegram();
+  const { user } = useTelegram();
   const { i18n } = useTranslation();
 
   useEffect(() => {
@@ -20,11 +22,9 @@ function App() {
   }, [user, i18n]);
 
   return (
-    <div className="App">
-      <Header />
-      <button onClick={onToggleBackButton}>ТОГЛ</button>
-      <ZodiacsList />
-    </div>
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
   );
 }
 
