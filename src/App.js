@@ -7,10 +7,6 @@ function App() {
   useEffect(() => {}, []);
   tg.ready();
 
-  const onClose = () => {
-    tg.close();
-  };
-
   return (
     <div className="App">
       <span>work</span>
