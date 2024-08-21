@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import { useTelegram } from "../../hooks/useTelegram";
 
 const ZodiacInfo = () => {
-  const { onToggleBackButton } = useTelegram();
+  const { onBackButton } = useTelegram();
   const { t } = useTranslation();
   const { zodiac } = useParams();
   const [info, setInfo] = useState("");
