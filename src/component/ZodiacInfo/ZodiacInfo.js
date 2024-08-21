@@ -39,7 +39,7 @@ const ZodiacInfo = () => {
     return () => {
       onBackButton(true);
     };
-  }, [zodiac]);
+  }, [zodiac, onBackButton]);
 
   return (
     <div className={styles.container}>
