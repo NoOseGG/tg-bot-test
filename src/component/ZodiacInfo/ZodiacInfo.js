@@ -13,6 +13,7 @@ const ZodiacInfo = () => {
   const { zodiac } = useParams();
   const [info, setInfo] = useState("");
 
+
   let touchStartX = 0;
   let touchEndX = 0;
 
@@ -51,7 +52,7 @@ const ZodiacInfo = () => {
     }
 
     return () => {
-      onBackButton(true);
+      onBackButton(false);
       document.removeEventListener();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps

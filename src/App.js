@@ -10,20 +10,16 @@ import { useTelegram } from "./hooks/useTelegram";
 import AppRouter from "./router/AppRouter";
 
 function App() {
-  const { tg, user } = useTelegram();
+  const { user } = useTelegram();
   const { i18n } = useTranslation();
 
   useEffect(() => {
-    tg.ButtonBack.show();
-    tg.ButtonBack.onClick(() => {
-      window.history.back();
-    });
     if (user?.language_code === "ru") {
       i18n.changeLanguage("ru");
     } else {
       i18n.changeLanguage("en");
     }
-  }, [user, i18n, tg]);
+  }, [user, i18n]);
 
   return (
     <BrowserRouter>
