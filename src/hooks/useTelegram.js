@@ -5,25 +5,25 @@ export function useTelegram() {
     tg.close();
   };
 
-  const onToggleButton = () => {
-    if (tg.MainButton.isVisible) {
-      tg.MainButton.hide();
-    } else {
+  const onMainButton = (isVisible) => {
+    if (isVisible) {
       tg.MainButton.show();
+    } else {
+      tg.MainButton.hide();
     }
   };
 
   const onBackButton = (isVisible) => {
     if (isVisible) {
-      tg.BackButton.hide();
-    } else {
       tg.BackButton.show();
+    } else {
+      tg.BackButton.hide();
     }
   };
 
   return {
     onClose,
-    onToggleButton,
+    onMainButton,
     onBackButton,
     tg,
     user: tg.initDataUnsafe?.user,
