@@ -1,0 +1,26 @@
+.zodiac-item {
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #000;
+  padding: 5px 10px;
+  transition: background-color 0.3s ease;
+}
+
+.zodiac-item:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.img {
+  width: 100px;
+  height: 100px;
+}
