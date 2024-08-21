@@ -21,7 +21,6 @@ export function useTelegram() {
       tg.BackButton.show();
       tg.BackButton.onClick(() => {
         window.history.back();
-        tg.BackButton.hide();
       });
     } else {
       tg.BackButton.hide();

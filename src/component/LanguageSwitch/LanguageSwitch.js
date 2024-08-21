@@ -5,10 +5,14 @@ import "./LanguageSwitch.module.css";
 import styles from "./LanguageSwitch.module.css";
 
 import Switch from "react-switch";
+import { useTelegram } from "../../hooks/useTelegram";
 
 export const LanguageSwitch = () => {
+  const { user } = useTelegram();
   const { i18n } = useTranslation();
-  const [isChecked, setIsChecked] = useState(true);
+  const [isChecked, setIsChecked] = useState(
+    user.language_code === "ru" ? true : false
+  );
 
   const handleChange = () => {
     setIsChecked(!isChecked);
@@ -28,7 +32,7 @@ export const LanguageSwitch = () => {
         checkedIcon={false}
         uncheckedIcon={false}
       />
-      <span className={styles.text}>{isChecked ? "English" : "Русский"}</span>
+      <span className={styles.text}>{isChecked ? "Русский" : "English"}</span>
     </div>
   );
 };
